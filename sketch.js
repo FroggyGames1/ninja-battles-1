@@ -1,5 +1,5 @@
  
-
+var swordPressed = false
 var playerX = 200
 var fist = playerX
 var playerY = 200
@@ -43,6 +43,22 @@ var game = ""
 var baseW = 600;
 var baseH = 400;
 
+function touchStarted() {
+  var tx = mouseX / scaleX
+  var ty = mouseY / scaleY
+
+  // ONLY trigger if touch starts on sword button
+  if (tx > 500 && tx < 600 && ty > 300 && ty < 400) {
+    swordPressed = true
+  }
+
+  return false
+}
+
+function touchEnded() {
+  swordPressed = false
+  return false
+}
 
 
 function setup() {
@@ -182,13 +198,17 @@ rect(600, 50, 75, 200)
       //player attack
   fill(0, 0, 0)
   rect(500, 300, 100, 100)
-if (mx > 500 && mx < 600 && my > 300 && my < 400) {
+if (
+  (mouseIsPressed && mx > 500 && mx < 600 && my > 300 && my < 400) ||
+  swordPressed
+) {
   attacking = true
   swordtimer++
 } else {
   attacking = false
   swordtimer = 0
 }
+
 
   
   if(swordtimer > 30){
