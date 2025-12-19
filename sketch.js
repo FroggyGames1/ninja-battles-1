@@ -44,6 +44,8 @@ var baseW = 600;
 var baseH = 400;
 
 function touchStarted() {
+if (game !== "playing") return false;
+ 
   var tx = mouseX / scaleX
   var ty = mouseY / scaleY
 
