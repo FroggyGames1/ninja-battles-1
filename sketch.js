@@ -25,7 +25,7 @@ var orbX = 575
 var orbY = 200
 var levelspeed = level/2
 var baseorbspeed = 3
-var orbSpeed = -(baseorbspeed + level/levelspeed)
+var orbSpeed = -(baseorbspeed + level)
 var attacking = false
 
 //hi
