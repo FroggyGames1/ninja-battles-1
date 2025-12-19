@@ -14,7 +14,7 @@ var swordX = playerX + 75
 var scaleX = 1
 var scaleY = 1
 
-
+//hi
 var level = 1
 var leveltimer = 1
 var swordtimer = 0
