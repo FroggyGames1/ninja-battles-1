@@ -78,7 +78,7 @@ var my = mouseY / scaleY
     game = "begining"
   }
   else {
-  game = "playering"
+  game = "playing"
 }
 
   
