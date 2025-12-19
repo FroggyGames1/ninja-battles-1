@@ -42,7 +42,7 @@ var game = ""
 var baseW = 600;
 var baseH = 400;
 
-//hi
+
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
