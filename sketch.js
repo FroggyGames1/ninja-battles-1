@@ -1,5 +1,4 @@
- 
-var swordPressed = false
+
 var playerX = 200
 var fist = playerX
 var playerY = 200
@@ -43,24 +42,6 @@ var game = ""
 var baseW = 600;
 var baseH = 400;
 
-function touchStarted() {
-if (game !== "playing") return false;
- 
-  var tx = mouseX / scaleX
-  var ty = mouseY / scaleY
-
-  // ONLY trigger if touch starts on sword button
-  if (tx > 500 && tx < 600 && ty > 300 && ty < 400) {
-    swordPressed = true
-  }
-
-  return false
-}
-
-function touchEnded() {
-  swordPressed = false
-  return false
-}
 
 
 function setup() {
@@ -97,7 +78,7 @@ var my = mouseY / scaleY
     game = "begining"
   }
   else {
-  game = "playing"
+  game = "playering"
 }
 
   
@@ -128,6 +109,7 @@ var my = mouseY / scaleY
     }
 
   }
+ 
   
   if(game == "playing"){
   background(79, 26, 204);
@@ -200,10 +182,8 @@ rect(600, 50, 75, 200)
       //player attack
   fill(0, 0, 0)
   rect(500, 300, 100, 100)
-if (
-  (mouseIsPressed && mx > 500 && mx < 600 && my > 300 && my < 400) ||
-  swordPressed
-) {
+
+    if (mx > 500 && mx < 600 && my > 300 && my < 400) {
   attacking = true
   swordtimer++
 } else {
@@ -297,6 +277,9 @@ if (mx > 400 && mx < 475 && my > 300 && my < 425) {
   fill(255, 255, 255)
   textSize(15)
     text("health = " + playerhp, playerX - 30, playerY - 70)
+    if(playerhp < 0){
+      playerhp = 0
+    }
   
     if(fist <= playerX - 70){
     fist = fist + 2
@@ -320,7 +303,8 @@ if (mx > 400 && mx < 475 && my > 300 && my < 425) {
 ellipse(orbX, 200, 50, 50)
   orbX = orbX + orbSpeed
   if(orbX < playerX + 60 && orbX > playerX - 60 && orbY < playerY + 30 && orbY > playerY - 30){
-    playerhp = playerhp - 1/2
+    playerhp = playerhp - 20
+    orbX = 575
   }
   if(orbX < 0){
     orbX = 575
