@@ -400,5 +400,3 @@ if (gameMessage !== "") {
   
 }
 
-//hi
-
