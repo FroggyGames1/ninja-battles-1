@@ -240,15 +240,6 @@ if (
   fill(240, 204, 70)
   rect(swordside, swordY, sword1, sword2)
   
-  if (
-  orbSpeed < 0 &&
-  orbX < playerX + 60 &&
-  orbX > playerX - 60 &&
-  orbY < playerY + 30 &&
-  orbY > playerY - 30
-) {
-  playerhp -= 1
-}
 
   if (
   orbSpeed > 0 &&
